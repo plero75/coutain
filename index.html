@@ -1,43 +1,49 @@
-<!doctype html>
-<html lang="fr">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Fun Out Agon 2026</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,900&family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-  <main class="app">
-    <section class="hero card">
-      <div class="stamp">Carnet live</div>
-      <h1>Fun Out<br>Agon 2026</h1>
-      <p>Timeline, météo, vote du samedi et petits personnages du week-end.</p>
-      <div class="hero-actions">
-        <a href="#timeline" class="btn primary">Voir le programme</a>
-        <a href="#vote" class="btn">Voter</a>
-      </div>
-      <div id="weatherHero" class="weather-mini">Météo en chargement…</div>
-    </section>
-
-    <section id="vote" class="card vote-card">
-      <div class="eyebrow">Samedi 13h30</div>
-      <h2>Le vote du peuple</h2>
-      <p>Deux visions du monde : chill sur l’estran ou sable dans les dents.</p>
-      <input id="voterName" placeholder="Ton prénom" maxlength="24" />
-      <div class="vote-grid">
-        <button class="vote-option" data-choice="Balade d’Anton">🌿 Balade d’Anton<span>Remorque, estran, huîtres, zéro effort.</span></button>
-        <button class="vote-option" data-choice="Char à voile">🌪️ Char à voile<span>Vent, vitesse, ego en danger.</span></button>
-      </div>
-      <div id="voteStatus" class="status"></div>
-      <div id="voteResults" class="results"></div>
-    </section>
-
-    <section id="timeline" class="timeline"></section>
-  </main>
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script src="app.js"></script>
-</body>
-</html>
+const SUPABASE_URL = 'https://londntrlnavypcshrplw.supabase.co';
+const SUPABASE_ANON_KEY = 'sb_publishable_ZcEF10Ljl2LgN0oiebdPBA_kbpdgR1f';
+const supabase = window.supabase?.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+const timeline = [
+ ['Jeu','16h00','Arrivées en freestyle','Paul tente d’organiser, Damien ouvre déjà une bière, les chambres deviennent un sujet diplomatique.','🧭🍺','Go week-end'],
+ ['Jeu','20h00','BBQ / dîner maison','Première tablée, premières vannes, week-end officiellement lancé.','🔥🥩','Apéro validé'],
+ ['Jeu','22h00','Lancement non officiel','Musique, discussions, option station si l’énergie grimpe.','🌙🎶','Soft annoncé, douteux'],
+ ['Ven','Matin','Réveil libre','Grasse mat, café, personne ne presse personne.','☕🛌','Récupération'],
+ ['Ven','14h00','Coques Masterclass avec Jean-Michel','Jean-Michel vient spécialement pour initier la team. Démo, tentatives, sable partout, premières coques et ego réparé. Basse mer 14h46, coef 90.','🐚👨‍🏫','Go coquillages'],
+ ['Ven','16h30','Retour + rinçage + apéro','On lave la récolte, on débat des performances et on lance l’apéro technique.','🪣🍻','Debrief obligatoire'],
+ ['Ven','19h30','Pasta aux coques','La récolte finit dans l’assiette. Le chef assume, le groupe juge.','🍝🐚','Jury Michelin maison'],
+ ['Ven','22h30','Casino + gaufre','On perd des jetons, on gagne du Nutella chantilly. Comptabilité émotionnelle parfaite.','🎰🧇','Sucre réparateur'],
+ ['Sam','09h00','Marché de Coutainville','Maïté négocie, Damien goûte tout, Paul achète trop. Place de l’Hippodrome.','🛍️🥖','Panier ambitieux'],
+ ['Sam','12h30','Déjeuner maison','Retour cuisine, produits du marché, météo check et digestion stratégique.','🍽️🌤️','Recharge'],
+ ['Sam','13h30','Vote du peuple','Balade d’Anton ou char à voile. Chill contre chaos, remorque contre rafales.','🗳️⚡','Décision finale'],
+ ['Sam','14h00','Activité gagnante','Balade d’Anton : estran, remorque, huîtres, moules. Char à voile : vent, vitesse, sable et trajectoires discutables.','🌿🌪️','Selon météo + vote'],
+ ['Sam','17h00','Retour + apéro','Debrief : j’ai géré, j’ai subi, j’ai regardé. Tout le monde a raison.','🍻📣','Analyse sportive'],
+ ['Sam','20h00','Plancha Night','Sunset, grillades, apéro qui traîne et mensonge collectif : on fait soft.','🔥🌅','Danger délicieux'],
+ ['Sam','22h00','Soirée','Jeux, musique, discussions absurdes. Heure de fin inconnue, archives floues.','🎲🪩','Fin non contractuelle'],
+ ['Dim','10h00','Brunch','Café vital, silence relatif, dignité partiellement restaurée.','☕🥐','Mode survie'],
+ ['Dim','11h30','Pointe d’Agon','Vélo, air marin, dunes, motivation variable selon la veille.','🚴🌊','Rédemption iodée'],
+ ['Dim','13h00','La Cale','Objectif moules-frites. Terrasse si miracle, cheminée si Normandie.','🍟🦪','Final gourmand'],
+ ['Dim','15h30','Départs','Check maison, objets oubliés, bisous, retour au réel.','🚗👋','Rideau']
+];
+document.getElementById('timeline').innerHTML = timeline.map(([d,t,title,desc,av,chip])=>`<article class="moment"><div class="time">${t}<small>${d}</small></div><div class="card moment-card"><div class="avatar">${av}</div><h2>${title}</h2><p>${desc}</p><div class="weather-chip">${chip}</div></div></article>`).join('');
+async function weather(){
+ const lat=49.041,lng=-1.582;
+ const url=`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lng}&current=temperature_2m,precipitation,wind_speed_10m,wind_gusts_10m&daily=temperature_2m_max,precipitation_sum,wind_speed_10m_max&timezone=Europe%2FParis`;
+ try{const r=await fetch(url); const j=await r.json(); const c=j.current; document.getElementById('weatherHero').textContent=`Agon maintenant : ${Math.round(c.temperature_2m)}°C · vent ${Math.round(c.wind_speed_10m)} km/h · rafales ${Math.round(c.wind_gusts_10m)} km/h · pluie ${c.precipitation} mm`;}
+ catch(e){document.getElementById('weatherHero').textContent='Météo indisponible pour l’instant';}
+}
+weather();
+async function saveVote(choice){
+ const name=document.getElementById('voterName').value.trim()||'Anonyme';
+ if(!supabase){localVote(choice,name);return}
+ const {error}=await supabase.from('funout_votes').upsert({name,choice},{onConflict:'name'});
+ document.getElementById('voteStatus').textContent= error ? 'Vote local enregistré, Supabase à vérifier.' : `Vote enregistré : ${choice}`;
+ loadVotes();
+}
+function localVote(choice,name){localStorage.setItem('funoutVote',JSON.stringify({name,choice}));document.getElementById('voteStatus').textContent=`Vote enregistré sur ce téléphone : ${choice}`;loadVotes();}
+async function loadVotes(){
+ let counts={'Balade d’Anton':0,'Char à voile':0};
+ if(supabase){const {data}=await supabase.from('funout_votes').select('choice');(data||[]).forEach(v=>counts[v.choice]=(counts[v.choice]||0)+1)}
+ const total=Math.max(1,Object.values(counts).reduce((a,b)=>a+b,0));
+ document.getElementById('voteResults').innerHTML=Object.entries(counts).map(([k,v])=>`<div><b>${k}</b><div class="bar"><div style="width:${Math.max(12,v/total*100)}%">${v}</div></div></div>`).join('');
+}
+document.querySelectorAll('.vote-option').forEach(b=>b.onclick=()=>saveVote(b.dataset.choice));
+loadVotes();
+if(supabase){supabase.channel('votes-live').on('postgres_changes',{event:'*',schema:'public',table:'funout_votes'},loadVotes).subscribe();}

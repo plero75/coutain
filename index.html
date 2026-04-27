@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fun Out Agon 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,900&family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app">
+    <section class="hero card">
+      <div class="stamp">Carnet live</div>
+      <h1>Fun Out<br>Agon 2026</h1>
+      <p>Timeline, météo, vote du samedi et petits personnages du week-end.</p>
+      <div class="hero-actions">
+        <a href="#timeline" class="btn primary">Voir le programme</a>
+        <a href="#vote" class="btn">Voter</a>
+      </div>
+      <div id="weatherHero" class="weather-mini">Météo en chargement…</div>
+    </section>
+
+    <section id="vote" class="card vote-card">
+      <div class="eyebrow">Samedi 13h30</div>
+      <h2>Le vote du peuple</h2>
+      <p>Deux visions du monde : chill sur l’estran ou sable dans les dents.</p>
+      <input id="voterName" placeholder="Ton prénom" maxlength="24" />
+      <div class="vote-grid">
+        <button class="vote-option" data-choice="Balade d’Anton">🌿 Balade d’Anton<span>Remorque, estran, huîtres, zéro effort.</span></button>
+        <button class="vote-option" data-choice="Char à voile">🌪️ Char à voile<span>Vent, vitesse, ego en danger.</span></button>
+      </div>
+      <div id="voteStatus" class="status"></div>
+      <div id="voteResults" class="results"></div>
+    </section>
+
+    <section id="timeline" class="timeline"></section>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="app.js"></script>
+</body>
+</html>

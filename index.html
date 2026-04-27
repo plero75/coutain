@@ -11,99 +11,25 @@
 </head>
 <body>
   <div class="phone-shell">
-    <header class="topbar">
-      <button class="round">☰</button>
-      <span>Fun Out Agon</span>
-      <button class="round">👥</button>
-    </header>
-
+    <header class="topbar"><button class="round">☰</button><span>Fun Out Agon</span><button class="round">👥</button></header>
     <main class="app">
-      <section class="hero page" id="home">
-        <div class="photo-bg"></div>
-        <div class="paper-title">
-          <h1>Fun Out<br>Agon 2026</h1>
-          <span>La course aux chambres</span>
-        </div>
-        <div class="blue-note">Le groupe vote,<br>mais la météo a un droit de veto.</div>
-      </section>
-
-      <section class="page timeline-page" id="programme">
-        <h2 class="brush">Programme</h2>
-        <div id="timeline" class="timeline"></div>
-      </section>
-
-      <section class="page activity-page" id="activites">
-        <h2>Activités</h2>
-        <div class="activity-grid">
-          <article class="activity-card">
-            <div class="activity-photo char"></div>
-            <div class="paper-label">Option A</div>
-            <h3>Char à voile</h3>
-            <p>Vitesse, sable, chaos contrôlé.</p>
-            <div class="info-row"><span>🕑 14h00 - 16h00</span><span>📍 Plage d’Agon</span></div>
-            <div class="mini-weather"><b>Vent</b> 14 km/h <b>Pluie</b> 0.2 mm <b>Temp.</b> 12°C</div>
-            <div class="verdict ok">OK <small>Go ! Éole se réveille.</small></div>
-            <ul class="checklist"><li>Coupe-vent</li><li>Lunettes</li><li>Baskets fermées</li></ul>
-          </article>
-          <article class="activity-card">
-            <div class="activity-photo anton"></div>
-            <div class="paper-label">Option B</div>
-            <h3>Balade d’Anton</h3>
-            <p>Plan chill, estran, moules, huîtres et remorque magique.</p>
-            <div class="info-row"><span>🕑 14h00 - 16h00</span><span>📍 Cale du Passous</span></div>
-            <div class="mini-weather"><b>Vent</b> 10 km/h <b>Pluie</b> 0 mm <b>Temp.</b> 13°C</div>
-            <div class="verdict ok">OK <small>Plan chill validé.</small></div>
-            <ul class="checklist"><li>Veste légère</li><li>Baskets</li><li>Appareil photo</li></ul>
-          </article>
-        </div>
-      </section>
-
-      <section class="page vote-page" id="vote">
-        <h2>Vote activité</h2>
-        <div class="tape">Samedi après-midi</div>
-        <h3>Char à voile<br>ou Balade d’Anton ?</h3>
-        <input id="voterName" placeholder="Ton prénom" maxlength="24" />
-        <button class="vote-option" data-choice="Char à voile"><b>A</b> Char à voile <span>Vitesse, sable, chaos contrôlé.</span></button>
-        <button class="vote-option" data-choice="Balade d’Anton"><b>B</b> Balade d’Anton <span>Plan chill, discussions, rythme tranquille.</span></button>
-        <div id="voteStatus" class="status"></div>
-        <div id="voteResults" class="results"></div>
-        <div class="blue-note small">Le groupe vote, mais la météo a un droit de veto.</div>
-      </section>
-
-      <section class="page meteo-page" id="meteo">
-        <h2>Météo</h2>
-        <div id="weatherHero" class="weather-big">Météo en chargement...</div>
-        <div class="verdict warn">TENDU <small>Ça peut passer, mais ne vendons pas la F1 des sables.</small></div>
-      </section>
-
-      <section class="page recap-page" id="recap">
-        <h2>Récap du week-end</h2>
-        <div class="recap-grid">
-          <div class="paper"><h3>Ce qu’on a fait</h3><ul><li>Arrivée & BBQ</li><li>Pêche aux coques</li><li>Pâtes aux coques</li><li>Casino + gaufre</li><li>Marché</li><li>Vote activité</li><li>Plancha</li><li>La Cale</li></ul></div>
-          <div class="paper blue"><h3>Stats fun</h3><p>4 jours de folie<br>25 km à vélo approx.<br>1 gaufre mythique<br>0 embrouilles record</p></div>
-        </div>
-      </section>
+      <section class="hero page" id="home"><div class="photo-bg"></div><div class="paper-title"><h1>Fun Out<br>Agon 2026</h1><span>La course aux chambres</span></div><div class="blue-note">Le groupe vote,<br>mais la météo a un droit de veto.</div></section>
+      <section class="page timeline-page" id="programme"><h2 class="brush">Programme</h2><div id="timeline" class="timeline"></div></section>
+      <section class="page activity-page" id="activites"><h2>Activités</h2><div class="activity-grid"><article class="activity-card"><div class="activity-photo char"></div><div class="paper-label">Option A</div><h3>Char à voile</h3><p>Vitesse, sable, chaos contrôlé.</p><div class="info-row"><span>🕑 14h00 - 16h00</span><span>📍 Plage d’Agon</span></div><div class="mini-weather" data-activity-weather="char">Météo live en chargement...</div><ul class="checklist"><li>Coupe-vent</li><li>Lunettes</li><li>Baskets fermées</li></ul></article><article class="activity-card"><div class="activity-photo anton"></div><div class="paper-label">Option B</div><h3>Balade d’Anton</h3><p>Plan chill, estran, moules, huîtres et remorque magique.</p><div class="info-row"><span>🕑 14h00 - 16h00</span><span>📍 Cale du Passous</span></div><div class="mini-weather" data-activity-weather="anton">Météo live en chargement...</div><ul class="checklist"><li>Veste légère</li><li>Baskets</li><li>Appareil photo</li></ul></article></div></section>
+      <section class="page vote-page" id="vote"><h2>Vote activité</h2><div class="tape">Samedi après-midi</div><h3>Char à voile<br>ou Balade d’Anton ?</h3><input id="voterName" placeholder="Ton prénom" maxlength="24" /><button class="vote-option" data-choice="Char à voile"><b>A</b> Char à voile <span>Vitesse, sable, chaos contrôlé.</span></button><button class="vote-option" data-choice="Balade d’Anton"><b>B</b> Balade d’Anton <span>Plan chill, discussions, rythme tranquille.</span></button><div id="voteStatus" class="status"></div><div id="voteResults" class="results"></div><div class="blue-note small">Le groupe vote, mais la météo a un droit de veto.</div></section>
+      <section class="page meteo-page" id="meteo"><h2>Météo</h2><div id="weatherHero" class="weather-big">Météo en chargement...</div><div id="weatherHourly" class="hourly-strip"></div><div id="weatherDaily" class="daily-forecast"></div></section>
+      <section class="page recap-page" id="recap"><h2>Récap du week-end</h2><div class="recap-grid"><div class="paper"><h3>Ce qu’on a fait</h3><ul><li>Arrivée & BBQ</li><li>Pêche aux coques</li><li>Pâtes aux coques</li><li>Casino + gaufre</li><li>Marché</li><li>Vote activité</li><li>Plancha</li><li>La Cale</li></ul></div><div class="paper blue"><h3>Stats fun</h3><p>4 jours de folie<br>25 km à vélo approx.<br>1 gaufre mythique<br>0 embrouilles record</p></div></div></section>
     </main>
-
-    <nav class="bottom-nav">
-      <a href="#programme">📅<span>Programme</span></a>
-      <a href="#meteo">🌦️<span>Météo</span></a>
-      <a href="#vote">✏️<span>Vote</span></a>
-      <a href="#activites">🎒<span>À prévoir</span></a>
-      <a href="#recap">ℹ️<span>Infos</span></a>
-    </nav>
+    <nav class="bottom-nav"><a href="#programme">📅<span>Programme</span></a><a href="#meteo">🌦️<span>Météo</span></a><a href="#vote">✏️<span>Vote</span></a><a href="#activites">🎒<span>À prévoir</span></a><a href="#recap">ℹ️<span>Infos</span></a></nav>
   </div>
-
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script>
-const SUPABASE_URL = 'https://londntrlnavypcshrplw.supabase.co';
-const SUPABASE_ANON_KEY = 'sb_publishable_ZcEF10Ljl2LgN0oiebdPBA_kbpdgR1f';
-const supabase = window.supabase?.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-const moments = [
- ['JEUDI 30 AVRIL','19h00','Arrivée & installation','On pose les sacs.','🏠','OK'],['JEUDI 30 AVRIL','20h00','BBQ / Dîner','Dehors si le ciel coopère.','🔥','TENDU'],['VENDREDI 1ER MAI','14h00','Pêche aux coques','Jean-Michel vient exprès pour nous apprendre. Objectif officiel : ramasser. Objectif réel : mériter l’apéro.','🐚','OK'],['VENDREDI 1ER MAI','19h30','Pâtes aux coques','Le chef improvise, le groupe juge.','🍝','OK'],['VENDREDI 1ER MAI','22h00','Casino + gaufre','Hasard + sucre = décisions discutables.','🎲','OK'],['SAMEDI 2 MAI','09h00','Marché de Coutainville','On achète toujours trop.','🧺','OK'],['SAMEDI 2 MAI','12h30','Déjeuner maison','Recharge avant décision collective.','🍽️','OK'],['SAMEDI 2 MAI','14h00','VOTE activité','Char à voile ou Balade d’Anton ?','🗳️','OK'],['SAMEDI 2 MAI','20h00','La Plancha','Juste un verre, menton.','🍷','TENDU'],['DIMANCHE 3 MAI','10h30','Vélo Pointe d’Agon','Énergie variable selon la veille.','🚲','TENDU'],['DIMANCHE 3 MAI','12h30','La Cale','Moules-frites, effort modéré, récompense maximale.','🦪','OK'],['DIMANCHE 3 MAI','15h00','Retour au bercail','Les souvenirs restent, le canapé aussi.','🚗','OK']
-];
-document.getElementById('timeline').innerHTML = moments.map(([day,time,title,desc,ico,state])=>`<article class="line-item"><div class="line-icon">${ico}</div><div class="line-content"><div class="date-chip">${day}</div><b>${time}</b><h3>${title}</h3><p>${desc}</p><span class="state ${state==='OK'?'green':'yellow'}">${state}</span></div><div class="thumb"></div></article>`).join('');
-async function weather(){try{const url='https://api.open-meteo.com/v1/forecast?latitude=49.041&longitude=-1.582&current=temperature_2m,precipitation,wind_speed_10m,wind_gusts_10m,relative_humidity_2m&hourly=temperature_2m,precipitation,wind_speed_10m&timezone=Europe%2FParis'; const r=await fetch(url); const j=await r.json(); const c=j.current; document.getElementById('weatherHero').innerHTML=`<div class="cloud">☁️</div><strong>${Math.round(c.temperature_2m)}°C</strong><span>Ciel normand</span><div class="weather-grid"><p>Ressenti ${Math.round(c.temperature_2m-2)}°C</p><p>Vent ${Math.round(c.wind_speed_10m)} km/h</p><p>Rafales ${Math.round(c.wind_gusts_10m)} km/h</p><p>Pluie ${c.precipitation} mm</p></div>`;}catch(e){document.getElementById('weatherHero').textContent='Météo indisponible';}}
+const SUPABASE_URL='https://londntrlnavypcshrplw.supabase.co'; const SUPABASE_ANON_KEY='sb_publishable_ZcEF10Ljl2LgN0oiebdPBA_kbpdgR1f'; const supabase=window.supabase?.createClient(SUPABASE_URL,SUPABASE_ANON_KEY);
+const moments=[['JEUDI 30 AVRIL','19h00','Arrivée & installation','On pose les sacs.','🏠','OK'],['JEUDI 30 AVRIL','20h00','BBQ / Dîner','Dehors si le ciel coopère.','🔥','OK'],['VENDREDI 1ER MAI','14h00','Pêche aux coques','Jean-Michel vient exprès pour nous apprendre. Objectif officiel : ramasser. Objectif réel : mériter l’apéro.','🐚','OK'],['VENDREDI 1ER MAI','19h30','Pâtes aux coques','Le chef improvise, le groupe juge.','🍝','OK'],['VENDREDI 1ER MAI','22h00','Casino + gaufre','Hasard + sucre = décisions discutables.','🎲','OK'],['SAMEDI 2 MAI','09h00','Marché de Coutainville','On achète toujours trop.','🧺','OK'],['SAMEDI 2 MAI','12h30','Déjeuner maison','Recharge avant décision collective.','🍽️','OK'],['SAMEDI 2 MAI','14h00','VOTE activité','Char à voile ou Balade d’Anton ?','🗳️','OK'],['SAMEDI 2 MAI','20h00','La Plancha','Juste un verre, menton.','🍷','OK'],['DIMANCHE 3 MAI','10h30','Vélo Pointe d’Agon','Énergie variable selon la veille.','🚲','OK'],['DIMANCHE 3 MAI','12h30','La Cale','Moules-frites, effort modéré, récompense maximale.','🦪','OK'],['DIMANCHE 3 MAI','15h00','Retour au bercail','Les souvenirs restent, le canapé aussi.','🚗','OK']];
+document.getElementById('timeline').innerHTML=moments.map(([day,time,title,desc,ico,state])=>`<article class="line-item"><div class="line-icon">${ico}</div><div class="line-content"><div class="date-chip">${day}</div><b>${time}</b><h3>${title}</h3><p>${desc}</p><span class="state green">${state}</span></div><div class="thumb"></div></article>`).join('');
+const codeIcon=c=>{if([0,1].includes(c))return'☀️';if([2,3].includes(c))return'☁️';if([45,48].includes(c))return'🌫️';if([51,53,55,61,63,65,80,81,82].includes(c))return'🌧️';if([71,73,75,77,85,86].includes(c))return'❄️';if([95,96,99].includes(c))return'⛈️';return'🌦️'};
+const dayName=s=>new Date(s+'T12:00:00').toLocaleDateString('fr-FR',{weekday:'short',day:'numeric'});
+async function weather(){try{const url='https://api.open-meteo.com/v1/forecast?latitude=49.041&longitude=-1.582&current=temperature_2m,precipitation,wind_speed_10m,wind_gusts_10m,relative_humidity_2m,weather_code&hourly=temperature_2m,precipitation,wind_speed_10m,weather_code&daily=temperature_2m_max,temperature_2m_min,precipitation_sum,wind_speed_10m_max,weather_code&timezone=Europe%2FParis&forecast_days=7'; const r=await fetch(url); const j=await r.json(); const c=j.current; document.getElementById('weatherHero').innerHTML=`<div class="weather-place">Agon-Coutainville<br><small>MAJ : ${new Date(c.time).toLocaleString('fr-FR',{weekday:'short',hour:'2-digit',minute:'2-digit'})}</small></div><div class="cloud">${codeIcon(c.weather_code)}</div><strong>${Math.round(c.temperature_2m)}°C</strong><span>Prévisions météo réelles</span><div class="weather-grid"><p>💨 Vent ${Math.round(c.wind_speed_10m)} km/h</p><p>🌬️ Rafales ${Math.round(c.wind_gusts_10m)} km/h</p><p>🌧️ Pluie ${c.precipitation} mm</p><p>💧 Humidité ${c.relative_humidity_2m}%</p></div>`; const now=new Date(); const indexes=j.hourly.time.map((t,i)=>[t,i]).filter(([t])=>new Date(t)>=now).slice(0,8).map(x=>x[1]); document.getElementById('weatherHourly').innerHTML='<h3>Prévision heure par heure</h3><div class="hourly-row">'+indexes.map(i=>`<div class="hour"><b>${new Date(j.hourly.time[i]).toLocaleTimeString('fr-FR',{hour:'2-digit'})}</b><span>${codeIcon(j.hourly.weather_code[i])}</span><strong>${Math.round(j.hourly.temperature_2m[i])}°</strong><small>${Math.round(j.hourly.wind_speed_10m[i])} km/h<br>${j.hourly.precipitation[i]} mm</small></div>`).join('')+'</div>'; document.getElementById('weatherDaily').innerHTML='<h3>Les prochains jours</h3>'+j.daily.time.slice(0,5).map((d,i)=>`<div class="dayline"><span>${dayName(d)}</span><b>${codeIcon(j.daily.weather_code[i])}</b><em>${Math.round(j.daily.temperature_2m_min[i])}° / ${Math.round(j.daily.temperature_2m_max[i])}°</em><small>Pluie ${j.daily.precipitation_sum[i]} mm · Vent ${Math.round(j.daily.wind_speed_10m_max[i])} km/h</small></div>`).join(''); document.querySelectorAll('[data-activity-weather]').forEach(el=>el.innerHTML=`<b>Vent</b> ${Math.round(c.wind_speed_10m)} km/h <b>Pluie</b> ${c.precipitation} mm <b>Temp.</b> ${Math.round(c.temperature_2m)}°C`);}catch(e){document.getElementById('weatherHero').textContent='Météo indisponible';}}
 weather();
 async function saveVote(choice){const name=document.getElementById('voterName').value.trim()||'Anonyme'; if(supabase){await supabase.from('funout_votes').upsert({name,choice},{onConflict:'name'});} localStorage.setItem('funout-vote',choice); document.getElementById('voteStatus').textContent='Vote enregistré : '+choice; loadVotes();}
 async function loadVotes(){let counts={'Char à voile':0,'Balade d’Anton':0}; if(supabase){const {data}=await supabase.from('funout_votes').select('choice'); (data||[]).forEach(v=>counts[v.choice]=(counts[v.choice]||0)+1);} else {const v=localStorage.getItem('funout-vote'); if(v) counts[v]++;} const total=Math.max(1,counts['Char à voile']+counts['Balade d’Anton']); document.getElementById('voteResults').innerHTML=Object.entries(counts).map(([k,v])=>`<div class="vote-line"><span>${k}</span><div><i style="width:${Math.max(8,v/total*100)}%">${v} vote${v>1?'s':''}</i></div><b>${Math.round(v/total*100)}%</b></div>`).join('');}
